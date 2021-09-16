@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row mt-3">
+        <h3 class = "fw-bold">Albums</h3>
+    </div>
+</div>
+<ul class="list-group mt-3">
+    <li class="list-group-item list-group-item-primary" *ngFor = "let album of albums">
+        <div class="row">
+            <div class="col-md-9">
+                <a class = "list-group-item list-group-item-primary border-0">{{album.title}} </a>
+            </div>
+            <div class="col-md-3">
+                <button class = "btn btn-success" (click) = "addToFavourites(album)">Favorilere Ekle</button>
+            </div>
+        </div>
+    </li>
+</ul>

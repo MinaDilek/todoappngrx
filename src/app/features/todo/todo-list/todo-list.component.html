@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row mt-3">
+        <h3 class = "fw-bold">Todos</h3>
+    </div>
+</div>
+<ul class="list-group mt-3">
+    <table class="table table-light">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Kullanıcı</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Tamamlandı</th>
+             <th scope = "col"></th>
+            <th scope = "col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let todo of todos">
+            <th scope="row">{{todo.id}}</th>
+            <th scope="row">{{todo.userId}}</th>
+            <td>{{todo.title}}</td>
+            <td>{{todo.completed}}</td>
+            <td><a routerLink = "/todoDetail/{{todo.id}}"><button class = "btn btn-primary">Detayları Görüntüle</button></a></td>
+            <td><a routerLink = "/todoUpdate/{{todo.id}}"><button class = "btn btn-warning">Güncelle</button></a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" (click) = "getTodosByPage(pagingInfo.currentPage - 1)"><span class = "page-number">Önceki</span></a></li>
+          <li class= {{getCurrentPageStyle(i)}} *ngFor = "let i of pageArray">
+              <a class="page-link" (click) = "getTodosByPage(i+1)"><span class = "page-number">{{i+1}}</span></a>
+          </li>
+          <li class="page-item"><a class="page-link" (click) = "getTodosByPage(pagingInfo.currentPage + 1)"><span class = "page-number">Sonraki</span></a></li>
+        </ul>
+      </nav>
+</ul>

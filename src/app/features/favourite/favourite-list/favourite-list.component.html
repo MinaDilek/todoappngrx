@@ -1,0 +1,19 @@
+<table class = "table">
+    <thead>
+        <tr>
+            <th scope = "col">ID</th>
+            <th scope = "col">Kullanıcı</th>
+            <th scope = "col">Albüm Adı</th>
+            <th scope = "col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let item of favourites">
+            <td scope = "row">{{item.id}}</td>
+            <td scope = "row">{{item.userId}}</td>
+            <td scope = "row">{{item.title}}</td>
+            <td scope = "row"><button class = "btn btn-danger" (click) = "removeFromFavourites(item)">Favorilerden Çıkart</button></td>
+        </tr>
+    </tbody>
+
+</table>

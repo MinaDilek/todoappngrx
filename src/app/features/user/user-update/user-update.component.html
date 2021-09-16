@@ -1,0 +1,37 @@
+<div>
+    <form [formGroup] = "userUpdateForm">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Ad Soyad</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                id="exampleFormControlInput1" 
+                placeholder="Ad Soyad"
+                formControlName = "name"
+            >
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Kullanıcı Adı</label>
+            <input 
+                type="email" 
+                class="form-control" 
+                id="exampleFormControlInput1" 
+                placeholder="Kullanıcı Adı"
+                formControlName = "username"
+            >
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email Adresi</label>
+            <input 
+                type="email" 
+                class="form-control" 
+                id="exampleFormControlInput1" 
+                placeholder="name@example.com"
+                formControlName = "email"
+            >
+          </div>
+          <div class = "mb-3">
+              <button class = "btn btn-secondary" (click) = "updateUser()">Güncelle</button>
+          </div>
+    </form>
+</div>

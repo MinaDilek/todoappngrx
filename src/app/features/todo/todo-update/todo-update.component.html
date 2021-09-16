@@ -1,0 +1,33 @@
+<div class="container">
+    <form [formGroup]= "todoUpdateForm">
+        <div class="row text-center">
+            <div class="my-3 row">
+                <label for="title" class="col-sm-2 col-form-label">Başlık</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" formControlName="title">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label for="inputUserID" class="col-sm-2 col-form-label">Kullanıcı Id</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" formControlName="userId">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="completed" value = "1" id="flexRadioDefault1" formControlName = "completed">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Tamamlandı
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="completed" value = "0" id="flexRadioDefault2" formControlName = "completed">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                      Tamamlanmadı
+                    </label>
+                  </div>
+            </div>
+            <button class="btn btn-primary" (click)="updateTodo()">Güncelle</button>
+        </div>
+    </form>
+</div>
